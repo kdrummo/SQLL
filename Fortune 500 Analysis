@@ -81,3 +81,11 @@ FROM fortune_companies
 WHERE revenue>=300
 AND paid_time_off_days>=20
 ORDER BY paid_time_off_days desc;
+
+State all Fortune 500 Companies that have a revenue of 300 or less or a tenure of 5 years or more.
+
+SELECT company_name, industry, revenue, avg_employee_tenure
+FROM fortune_companies
+WHERE revenue<=300
+OR avg_employee_tenure>=5
+ORDER BY avg_employee_tenure desc;
