@@ -89,3 +89,9 @@ FROM fortune_companies
 WHERE revenue<=300
 OR avg_employee_tenure>=5
 ORDER BY avg_employee_tenure desc;
+
+Show max revenue of each Fortune 500 Company.
+
+SELECT MAX(revenue), company_name
+FROM fortune_companies
+GROUP BY revenue;
