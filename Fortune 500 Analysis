@@ -67,9 +67,17 @@ ELSE "Under 6" END AS "maternity_rating"
 FROM fortune_companies
 WHERE industry='Manufacturing';
 
-Calculate  how much made or each company where the total made is at least $200.
+Calculate how much revenue made for each company where the total made is at least $200.
 
 SELECT company_name, SUM(revenue) AS total_made
 FROM fortune_companies
 GROUP BY company_name
 HAVING total_made>=200;
+
+State all Fortune 500 Companies that have a revenue of at least 300 and paid time off of at least 20 days or more.
+
+SELECT *
+FROM fortune_companies
+WHERE revenue>=300
+AND paid_time_off_days>=20
+ORDER BY paid_time_off_days desc;
