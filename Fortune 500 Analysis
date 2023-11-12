@@ -56,7 +56,16 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
+Rate all of the companies in the manufaturing industry as "Great", "Awesome", or "Excellent" based on maternity leave weeks.
+(6 or less= Great, 9 or less= Awesome, 15 or less= Excellent)
 
+SELECT company_name, 
+CASE WHEN maternity_leave_weeks<=6 THEN "Great"
+WHEN maternity_leave_weeks<=9 THEN "Awesome"
+WHEN maternity_leave_weeks<=15 THEN "Excellent" 
+ELSE "Under 6" END AS "maternity_rating"
+FROM fortune_companies
+WHERE industry='Manufacturing';
 
 Calculate  how much made or each company where the total made is at least $200.
 
